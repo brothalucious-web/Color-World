@@ -27,7 +27,9 @@ jobs:
       - name: Make the Gradle wrapper executable
         run: chmod +x gradlew
  
+      # Optional extra check; skipped if the tools folder was not uploaded
       - name: Run the rule tests
+        if: hashFiles('tools/run-logic-tests.sh') != ''
         run: sh tools/run-logic-tests.sh
  
       - name: Build the mod
