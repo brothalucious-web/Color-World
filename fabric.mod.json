@@ -1,0 +1,32 @@
+{
+	"schemaVersion": 1,
+	"id": "colorworld",
+	"version": "${version}",
+	"name": "Color World",
+	"description": "The world keeps going grayscale. Its colors come back as original or random colors, and when 85% of the world's visual color has returned, you die.",
+	"authors": [
+		"You"
+	],
+	"license": "CC0-1.0",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"com.colorworld.ColorWorldMod"
+		],
+		"client": [
+			"com.colorworld.client.ColorWorldClient"
+		]
+	},
+	"mixins": [
+		{
+			"config": "colorworld.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.16.0",
+		"minecraft": "1.21.2",
+		"java": ">=21",
+		"fabric-api": "*"
+	}
+}

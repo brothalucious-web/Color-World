@@ -1,0 +1,15 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "com.colorworld.mixin.client",
+  "compatibilityLevel": "JAVA_21",
+  "client": [
+    "GameRendererInvoker",
+    "PostEffectPassAccessor",
+    "PostEffectProcessorAccessor",
+    "PostEffectProcessorMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
