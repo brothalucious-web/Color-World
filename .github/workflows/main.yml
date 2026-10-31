@@ -20,12 +20,11 @@ jobs:
           distribution: temurin
           java-version: 21
  
+      # Installs Gradle itself, so the gradle/wrapper folder is not needed
       - name: Set up Gradle
         uses: gradle/actions/setup-gradle@v6
- 
-      # Files uploaded through the GitHub website lose their "executable" flag
-      - name: Make the Gradle wrapper executable
-        run: chmod +x gradlew
+        with:
+          gradle-version: 9.8.2
  
       # Optional extra check; skipped if the tools folder was not uploaded
       - name: Run the rule tests
@@ -33,7 +32,7 @@ jobs:
         run: sh tools/run-logic-tests.sh
  
       - name: Build the mod
-        run: ./gradlew build
+        run: gradle build
  
       - name: Upload the mod jar
         uses: actions/upload-artifact@v7
